@@ -6,6 +6,7 @@ public class Program
 	{
 		byte [,] SourceArray;
 		byte [,] FArray;
+		//исходный массив
 		String [] Source = 
 		{
 			"4 6 029402 560202 029694 780288",
@@ -13,7 +14,7 @@ public class Program
 			"15 15 900934352126360 119214144058652 979486082875698 322436531185165 887105930987956 232802644488782 302771989566798 073573207654780 311755785362806 909007939272309 395094805516080 562910805349811 993854324744973 768703404219199 630625270887199",
 			"5 15 000000000000000 000000000000000 000000100000000 000000000000000 000000000000000"
 		};
-		
+		//массив который нужно найти в исходном
 		String [] Find = 
 		{
 			"2 2 02 94",
@@ -58,8 +59,6 @@ public class Program
 				w = Convert.ToInt32(s);	
 		}
 		byte [,] array = new byte [h,w];
-//		Console.WriteLine(h+" - " + w+" "+k);
-		
 		
 		for (int y = 0; y < h; y++)
 		{
@@ -70,9 +69,6 @@ public class Program
 				if (ca[k] != ' ' && k <=ca.Length-1 )
 				{
 					array[y,x] = Convert.ToByte(ca[k]-'0');
-					//Console.WriteLine(ca.Length );
-					//Console.WriteLine(k);
-					//Console.WriteLine(ca[k] +" x "+x+ " y "+ y);
 				}
 			
 				k++;
