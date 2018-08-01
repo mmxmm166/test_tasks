@@ -106,7 +106,7 @@ public class Program
 						if (fRezult == SquareFArray) 
 						{
 							Console.WriteLine("есть совпадение, координаты начала x = " + (x+1) + ", y = " + (y+1));
-							Rezult = true;
+							return true;
 						}
 					}
 				}	
