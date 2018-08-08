@@ -99,7 +99,6 @@ public class Program
 				{
 					for (int xf = 0; xf < Wf; xf++)
 					{
-						//Console.WriteLine(" x " + x+" y " +y +" xf " +xf+" yf " +yf);
 						if (sArray[y+yf,x+xf] == fArray[yf,xf])
 							fRezult++;
 						
