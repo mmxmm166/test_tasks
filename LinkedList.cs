@@ -175,8 +175,8 @@ namespace myLinkedList
                 return;
             }
 
-                //находит все элементы с одинаковым значением и выдает массив этих эллементов
-                public Node[] FindAllValue(int val)
+            //находит все элементы с одинаковым значением и выдает массив этих эллементов
+            public Node[] FindAllValue(int val)
             {
                 Node node = head;
                 int countValue = 0;
