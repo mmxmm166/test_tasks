@@ -139,27 +139,32 @@ namespace AlgorithmsDataStructures
             }
             return countValue;
         }
+        public void InsertFirst (Node _nodeToInsert)
+        {
+            this.AddInTail(_nodeToInsert);
+            return;
+        }
 
         public void InsertAfter(Node _nodeAfter, Node _nodeToInsert)
         {
-            // здесь будет ваш код вставки узла после заданного узла
+            // здесь будет ваш код вставки узла после заданного
 
             // если _nodeAfter = null и список пустой, 
             // добавьте новый элемент первым в списке 
 
-            // если _nodeAfter = null и список непустой, 
-            // добавьте новый элемент последним в списке 
-
-            if ((_nodeAfter == tail) || (_nodeAfter == null))
+            if ((_nodeAfter == tail) || (_nodeAfter == null) && (this.head == null))
             {
                 this.AddInTail(_nodeToInsert);
                 return;
             }
-            Node nodeTemp = _nodeAfter.next;
-            _nodeAfter.next = _nodeToInsert;
-            _nodeToInsert.next = nodeTemp;
-            _nodeToInsert.prev = _nodeAfter;
-            return;
+            else if (_nodeAfter != null)
+            {
+                Node nodeTemp = _nodeAfter.next;
+                _nodeAfter.next = _nodeToInsert;
+                _nodeToInsert.next = nodeTemp;
+                _nodeToInsert.prev = _nodeAfter;
+                return;
+            }
         }
 
     }
