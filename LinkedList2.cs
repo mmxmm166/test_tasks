@@ -78,11 +78,9 @@ namespace AlgorithmsDataStructures
 
         public bool Remove(int _value)
         {
-            // здесь будет ваш код удаления одного узла по заданному значению
-            Node prev = null;
-            Node node = head;
-
-            while (node != null)
+           // здесь будет ваш код удаления одного узла по заданному значению
+            Node node = this.Find(_value);
+            if (node != null)
             {
                 if (node.value == _value)
                 {
@@ -95,20 +93,23 @@ namespace AlgorithmsDataStructures
                     if (node == head)
                     {
                         head = node.next;
+                        head.prev = null;
                         return true;
                     }
                     if (node == tail)
                     {
-                        tail = prev;
+                        tail = node.prev;
+                        tail.next = null;
+                        return true;
                     }
-                    prev.next = node.next;
-                    node = null;
-                    return true; 
+                    node.prev.next = node.next;
+                    node.next.prev = node.prev;
+                   // node.prev = null;
+                    return true;
                 }
-                prev = node;
-                node = node.next;
-            }
-            return false; 
+             }
+   
+            return false;
         }
 
         public void RemoveAll(int _value)
