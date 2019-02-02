@@ -30,22 +30,28 @@ namespace AlgorithmsDataStructures
                 T[] old_array = new T[array.Length];
                 array.CopyTo(old_array, 0);
                 array = new T[new_capacity];
-                Array.Copy(old_array, array, old_array.Length);
+                int newsize = array.Length < old_array.Length ? array.Length : old_array.Length;
+                Array.Copy(old_array, array, newsize);
                 capacity = new_capacity;    
             }
         }
 
         public T GetItem(int index)
         {
+            if (index >= count)
+            {
+                throw new System.ArgumentException("индекс выходит за пределы массива", "original");
+            }
             // ваш код
-            return default(T);
+            if (array !=null)
+                return array[index];
+            else
+                return default(T);
         }
 
         public void Append(T itm)
         {
             // ваш код
-            // размер м
-            
             if (count < capacity) 
             {
                 array[count] = itm;
@@ -64,11 +70,11 @@ namespace AlgorithmsDataStructures
             {
                 return 16;
             }
-            if (count > capacity)
+            if (count >= capacity)
             {
                 rezult = capacity * 2;
             }
-            if (count < capacity/2)
+            if (count <= capacity/2)
             {
                 rezult = (int)(capacity/1.5);
                 if (rezult < 16)
@@ -80,42 +86,44 @@ namespace AlgorithmsDataStructures
         {
             // ваш код
             // если индекс 0 то вставляем в начало
-            if (index == count-1) && (count >0 )  
+            if (index > count)
             {
-                this.Append(itm);
+                throw new System.ArgumentException("индекс выходит за пределы массива", "original");
+            }
+            if (((index == count-1)|| (index == count)) && (count >0 ))  
+            {
+                Append(itm);
                 return;
             }
-            if (index == 0)
-            {
                 count++;
-                this.MakeArray(new_capacity());
-                array.CopyTo(array, index + 1);
+                MakeArray(new_capacity());
+                Array.Copy(array, index, array, index + 1, count-index);
                 array[index] = itm;
-            }
         }
 
         public void Remove(int index)
         {
             // ваш код
             // если индекс 0 то вставляем в начало
-            if (index == 0)
+            if (index >= count)
             {
-
+                throw new System.ArgumentException("индекс выходит за пределы массива", "original");
             }
-            if (index == count - 1)
+            count--;
+            MakeArray(new_capacity());
+
+            if (index < count - 1)
             {
-                count--;
-
-                return;
+                Array.Copy(array, index+1, array, index, count - index);
             }
-            if (index == 0)
-            {
-                count++;
-                this.MakeArray(new_capacity());
-                array.CopyTo(array, index + 1);
-                array[index] = itm;
-            }
-
+            array[count] = default(T);
+            return;
+        }
+        public void Clear()
+        {
+            array = null;
+            count = 0;
+            MakeArray(16);
         }
 
     }
