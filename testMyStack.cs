@@ -17,7 +17,7 @@ namespace AlgorithmsDataStructures
                  Console.WriteLine(stack.Pop());
              }
             stack.Print();
-            String sss = "((())";
+            String sss = "((((";
             Console.Write("скобки в " + sss + " " );
 
             if (AnalizeParentheses(sss))
@@ -70,7 +70,7 @@ namespace AlgorithmsDataStructures
             }
             return s2.Pop();
         }
-
+ 
         static  bool AnalizeParentheses(string s)
         {
             Stack<char> s1 = new Stack<char>();
@@ -105,10 +105,17 @@ namespace AlgorithmsDataStructures
             {
                 return false;
             }
-            return true;
+            
+           if (s2.Size() > 0)
+                return false;
+           else
+                return true;
         }
     }
 }
+
+ 
+
 
  
 
