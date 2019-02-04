@@ -46,9 +46,9 @@ namespace AlgorithmsDataStructures
                 string ch;
                 ch = s1.Pop();
                 if ((ch != "+") && (ch != "*"))
-	            {
+	        {
                     s2.Push(ch);
-	            }
+	        }
                 else if (ch=="+")
                 {
                     while (s2.Size() > 1)
@@ -76,9 +76,9 @@ namespace AlgorithmsDataStructures
             Stack<char> s1 = new Stack<char>();
             Stack<char> s2 = new Stack<char>();
             for (int i = s.Length-1; i >= 0 ; i--)
-			{
+		{
                 s1.Push(s[i]);
-			}
+		}
             if (s1.Size() > 1 && s1.Size()%2 == 0)
             {
                 while (s1.Size() > 1)
