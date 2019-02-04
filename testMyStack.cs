@@ -13,73 +13,73 @@ namespace AlgorithmsDataStructures
             Console.WriteLine("печатаем и извлекаем содержимое стека ");
 
             while (stack.Size() > 0)
-             {
-                 Console.WriteLine(stack.Pop());
-             }
+            {
+                Console.WriteLine(stack.Pop());
+            }
             stack.Print();
             String sss = "((((";
-            Console.Write("скобки в " + sss + " " );
+            Console.Write("скобки в " + sss + " ");
 
             if (AnalizeParentheses(sss))
-                Console.WriteLine("сбалансированы " );
+                Console.WriteLine("сбалансированы ");
             else
                 Console.WriteLine("несбалансированы");
 
             sss = "8 2 + 5 * 9 +";
-            Console.WriteLine("результат "+sss + " = " + calc(sss));
+            Console.WriteLine("результат " + sss + " = " + calc(sss));
 
             Console.ReadLine();
         }
-         
+
         static String calc(String str)
         {
             Stack<string> s1 = new Stack<string>();
             Stack<string> s2 = new Stack<string>();
-            for (int i = str.Length-1; i >= 0 ; i--)
-			{
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
                 if (str[i] != ' ')
                     s1.Push(Convert.ToString(str[i]));
-			}
+            }
 
             while (s1.Size() > 0)
             {
                 string ch;
                 ch = s1.Pop();
                 if ((ch != "+") && (ch != "*"))
-	        {
+                {
                     s2.Push(ch);
-	        }
-                else if (ch=="+")
+                }
+                else if (ch == "+")
                 {
                     while (s2.Size() > 1)
                     {
                         int num1 = Convert.ToInt32(s2.Pop());
                         int num2 = Convert.ToInt32(s2.Pop());
-                        s2.Push(Convert.ToString(num1+num2)); 
+                        s2.Push(Convert.ToString(num1 + num2));
                     }
                 }
-                else if (ch=="*")
+                else if (ch == "*")
                 {
                     while (s2.Size() > 1)
                     {
                         int num1 = Convert.ToInt32(s2.Pop());
                         int num2 = Convert.ToInt32(s2.Pop());
-                        s2.Push(Convert.ToString(num1*num2)); 
+                        s2.Push(Convert.ToString(num1 * num2));
                     }
                 }
             }
             return s2.Pop();
         }
- 
-        static  bool AnalizeParentheses(string s)
+
+        static bool AnalizeParentheses(string s)
         {
             Stack<char> s1 = new Stack<char>();
             Stack<char> s2 = new Stack<char>();
-            for (int i = s.Length-1; i >= 0 ; i--)
-		{
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
                 s1.Push(s[i]);
-		}
-            if (s1.Size() > 1 && s1.Size()%2 == 0)
+            }
+            if (s1.Size() > 1 && s1.Size() % 2 == 0)
             {
                 while (s1.Size() > 1)
                 {
@@ -101,18 +101,19 @@ namespace AlgorithmsDataStructures
                     }
                 }
             }
-            else 
+            else
             {
                 return false;
             }
-            
-           if (s2.Size() > 0)
+
+            if (s2.Size() > 0)
                 return false;
-           else
+            else
                 return true;
         }
     }
 }
+
 
  
 
