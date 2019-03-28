@@ -9,13 +9,15 @@ namespace AlgorithmsDataStructures
         private int step;
         public string[] slots;
         public T[] values;
+        private int _primenumber;
 
         public NativeDictionary(int sz)
         {
-            step = 5;
+            step = 7;
             size = sz;
             slots = new string[size];
             values = new T[size];
+            _primenumber = primenumber(size);
         }
 
         public int HashFun(string key)
@@ -32,7 +34,8 @@ namespace AlgorithmsDataStructures
 
                 if (size > 0)
                 {
-                    index = index % size;
+                    index = ((5 * index + 109) % _primenumber) % size;
+                    //                    index = index % size;
                 }
                 else
                 {
@@ -42,7 +45,27 @@ namespace AlgorithmsDataStructures
             return index;
         }
 
-  
+        private int primenumber(int end)
+        {
+            int result = 0;
+            for (int i = 2; i < end * 2; i++)
+            {
+                bool b = true;
+                for (int j = 2; j < i; j++)
+                {
+                    if (i % j == 0 & i % 1 == 0)
+                    {
+                        b = false;
+                    }
+                }
+                if (b)
+                {
+                    result = i;
+                }
+            }
+            return result;
+        }
+
         public int SeekSlot(string value)
         {
             // находит индекс пустого слота для значения, или -1
@@ -105,7 +128,7 @@ namespace AlgorithmsDataStructures
         {
             // возвращает true если ключ имеется,
             // иначе false
-            if (Find(key) == -1) 
+            if (Find(key) == -1)
                 return false;
             else
                 return true;
@@ -115,10 +138,14 @@ namespace AlgorithmsDataStructures
         {
             // гарантированно записываем 
             // значение value по ключу key
-
-            if (value != null)
+            int index = Find(key);
+            if (index != -1)
             {
-                int index = SeekSlot(key);
+                values[index] = value;
+            }
+            else
+            {
+                index = SeekSlot(key);
                 if (index != -1)
                 {
                     values[index] = value;
@@ -126,6 +153,7 @@ namespace AlgorithmsDataStructures
                 }
             }
         }
+
 
         public T Get(string key)
         {
