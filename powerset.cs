@@ -103,9 +103,9 @@ namespace AlgorithmsDataStructures
             // иначе false
             if (set2 != null)
             {
-                foreach (var item in ps)
+                foreach (var item in set2.ps)
                 {
-                    if (!set2.Get(item))
+                    if (!ps.Contains(item))
                     {
                         return false;
                     }
