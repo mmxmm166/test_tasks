@@ -1,3 +1,15 @@
+/*
+old - TreeAgeOfYear
+//возраст дерева в годах
+
+h - HightCrownTree
+// высота кроны дерева
+
+w - WeightCrownTree
+// - ширина кроны дерева
+
+*/
+
 using System;
 					
 public class Program
