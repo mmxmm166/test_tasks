@@ -1,3 +1,14 @@
+/*
+lpart - LeftPartNumberTicket
+//левая часть номера билета
+
+rpart - RightPartNumberTicket
+//правая часть номера билета
+
+Nticket - NumberTicket
+//номер билета
+
+*/
 using System;
 					
 public class Program
