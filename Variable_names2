@@ -1,0 +1,56 @@
+6.1
+TreeCrown // крона дерева 
+TypeMinuts //тип минут в зависимости от склонения
+NameMinutsWithout //наименование минут без какого то количества минут
+NameHoursZero //наименование часа в 00 минут
+NameFilesDelete  //наименования удаленных файлов
+
+6.2 
+StringList //список строк
+My_Array // объект произвольного массива 
+IndexNext // следующий индекс
+SortList //отсортированный список
+
+6.3
+ public class Shape
+    {
+        //хороший пример
+		public int SizeX { get; set; }
+        public int SizeY { get; set; }
+        public int CoordX { get; set; }
+        public int CoordY { get; set; }
+		
+		// а это не хороший пример
+        public string TypeShape { get; set; }
+        public bool SelectShape { get; set; }
+		//логичнее
+		public string Еype{ get; set; }
+        public bool Select{ get; set; }
+		
+		//еще плохой пример
+		public bool IsAboutAreaShape(int X, int Y)
+		//исправляем
+		public bool IsAboutArea(int X, int Y)
+		
+6.4		
+NameFilesFromFileArray //22 символа 
+NameFilesFromFileArr //исправляем - 20 символов
+	
+NameFilesDirectoryArrayRezult //30 символов
+NameFilesDirArrRez //исправляем - 20 символов
+
+NameFilesDirectoryArray //23 символа
+NameFilesDirArr //исправляем  - 15 символов
+
+sss //коротко и непонятно, в программе это массив строк, но в пределах видимости из 7 строчке
+StrArrayMy //исправляем так понятнее, и длиннее не нужно
+
+из предыдущего задания 
+
+RightPartNumberTicket // 21 символ - правая часть номера билета
+RightPartNumbTicket // исправляем19 символов
+
+
+
+
+		
