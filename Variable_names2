@@ -15,7 +15,7 @@ SortList //отсортированный список
  public class Shape
     {
         //хороший пример
-		public int SizeX { get; set; }
+	public int SizeX { get; set; }
         public int SizeY { get; set; }
         public int CoordX { get; set; }
         public int CoordY { get; set; }
@@ -24,7 +24,7 @@ SortList //отсортированный список
         public string TypeShape { get; set; }
         public bool SelectShape { get; set; }
 		//логичнее
-		public string Еype{ get; set; }
+	public string Type{ get; set; }
         public bool Select{ get; set; }
 		
 		//еще плохой пример
