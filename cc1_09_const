@@ -1,0 +1,35 @@
+//было 
+public const string add = "add";
+//стало
+public const string SHAPE_ADD = "add";
+
+//было 
+public const string del = "del";
+//стало
+public const string SHAPE_DEL = "del";
+
+//было 
+public const string rectangle = "rectangle";
+//стало
+public const string SHAPE_TYPE_RECTANGLE= "rectangle";
+
+//было 
+public const string ellipse = "ellipse";
+//стало
+public const string SHAPE_TYPE_ELLIPSE= "ellipse";
+//все константы теперь большими буквами
+//добавлено тип фигуры и тип действия который проводился с фигурой
+
+
+//было
+for (int h = 0; h <= 23; h++)
+        {
+            for (int m = 0; m <= 59; m++)
+// стало, было два магических числа 23 и 59 избавляемся от них
+const int COUNT_HOURS_IN_DAY = 24
+const int COUNT_MINUTS_IN_HOUR = 60
+
+for (int h = 0; h <= COUNT_HOURS_IN_DAY-1; h++)
+        {
+            for (int m = 0; m <= COUNT_MINUTS_IN_HOUR-1; m++)
+
