@@ -9,9 +9,12 @@ public class Program
     public static void Main()
     {
 
-        for (int h = 0; h <= 23; h++)
+    const int COUNT_HOURS_IN_DAY = 24
+    const int COUNT_MINUTS_IN_HOUR = 60
+
+    for (int h = 0; h <= COUNT_HOURS_IN_DAY-1; h++)
         {
-            for (int m = 0; m <= 59; m++)
+            for (int m = 0; m <= COUNT_MINUTS_IN_HOUR-1; m++)
             {
                 Console.WriteLine(h + ":" + m + " " + TimeForHuman(h, m));
             }
