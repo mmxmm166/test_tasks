@@ -50,17 +50,17 @@ public class Program
 	public class Tree
 	{	
 		public int [,] TreeCrown;
-		public int old;
+		public int TreeAgeOfYear;
 		public Tree()
 		{
-			old=1;
+			TreeAgeOfYear=1;
 		}
-		public void CrownFillRandom (int w, int h) // заполнение дерева в первый год случайными ветками
+		public void CrownFillRandom (int WeightCrownTree, int HightCrownTree) // заполнение дерева в первый год случайными ветками
 		{
 			Random rand=new Random(); 
-			TreeCrown=new int [h,w];
-			for(int i=0; i<h; i++) 
-				for(int j=0; j<w; j++) 
+			TreeCrown=new int [HightCrownTree,WeightCrownTree];
+			for(int i=0; i<HightCrownTree; i++) 
+				for(int j=0; j<WeightCrownTree; j++) 
 				{
 					TreeCrown[i,j]=rand.Next(0,2);
 				}
@@ -68,23 +68,23 @@ public class Program
 		public void NextYear () //дерево растет на один год
 		{
 			//растим ветки
-			old++;
-			int h=TreeCrown.GetLength(0);
-			int w=TreeCrown.GetLength(1);
+			TreeAgeOfYear++;
+			int HightCrownTree=TreeCrown.GetLength(0);
+			int WeightCrownTree=TreeCrown.GetLength(1);
 
-			for(int i=0; i<h; i++) 
+			for(int i=0; i<HightCrownTree; i++) 
 			{
-				for(int j=0; j<w; j++) 
+				for(int j=0; j<WeightCrownTree; j++) 
 				{
 					TreeCrown[i,j]++;
 				}
 			}
 			//уничтожаем ветки
-			if (old%2!=0 ) // ветки уничтожаются в четный год
+			if (TreeAgeOfYear%2!=0 ) // ветки уничтожаются в четный год
 			{
-				for(int i=0; i<h; i++) 
+				for(int i=0; i<HightCrownTree; i++) 
 				{
-					for(int j=0; j<w; j++) 
+					for(int j=0; j<WeightCrownTree; j++) 
 					{
 						if (TreeCrown[i,j]>=3)
 						{	
@@ -105,7 +105,7 @@ public class Program
 										iScan=i;
 										jScan=j+k;
 									};
-									if ((iScan>=0) && (iScan<h) && (jScan>=0) && (jScan<w))
+									if ((iScan>=0) && (iScan<HightCrownTree) && (jScan>=0) && (jScan<w))
 											if (TreeCrown[iScan,jScan]<=2)
 											{
 												TreeCrown[iScan,jScan]=0;
@@ -118,7 +118,7 @@ public class Program
 		}
 		public void View (bool AsIs) // прорисовка дерева
 		{
-			Console.WriteLine("возраст дерева, лет: " + old);
+			Console.WriteLine("возраст дерева, лет: " + TreeAgeOfYear);
 
 			for(int i=0; i<TreeCrown.GetLength(0); i++) 
 			{
