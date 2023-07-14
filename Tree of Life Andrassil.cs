@@ -23,13 +23,15 @@ public class Program
 		Trees[0]=MyTree1;
 		
 		Tree MyTree2 = new Tree();
-		MyTree2.TreeCrown=new int [,] {{0,0,0,0,0,0,0},
-									  {0,0,0,1,0,0,0},
-									  {0,0,0,0,1,0,0},
-									  {0,0,0,0,0,0,0},
-									  {1,1,0,0,0,0,0},
-									  {1,1,0,0,0,0,0}
-									 };
+		MyTree2.TreeCrown=new int [,] 
+		{
+	  		  {0,0,0,0,0,0,0},
+			  {0,0,0,1,0,0,0},
+			  {0,0,0,0,1,0,0},
+			  {0,0,0,0,0,0,0},
+			  {1,1,0,0,0,0,0},
+			  {1,1,0,0,0,0,0}
+		};
 		Trees[1]=MyTree2;
 		
 		Tree MyTree3 = new Tree();
