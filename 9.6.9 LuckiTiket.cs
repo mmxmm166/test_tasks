@@ -16,7 +16,7 @@ public class Program
 	public static void Main() //9.6.9.c#
 	{
 		int NumberTicket=124007;
-		int	LeftPartNumberTicket=NumberTicket/1000;
+		int LeftPartNumberTicket=NumberTicket/1000;
 		int RightPartNumberTicket=NumberTicket%1000;
 //		Console.WriteLine(LeftPartNumberTicket + " " + RightPartNumberTicket);
 		LeftPartNumberTicket=LeftPartNumberTicket/100+(LeftPartNumberTicket/10)%10+LeftPartNumberTicket%10;
