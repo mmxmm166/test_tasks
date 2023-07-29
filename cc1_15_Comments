@@ -1,1 +1,19 @@
+// истина - если координаты находятся внутри фигуры и слева и сверху на размер фигуры
+    public bool IsAboutAreaShape(int X, int Y)
+    {
+        if ((X >= CoordX - SizeX && X <= CoordX + SizeX) && (Y >= CoordY - SizeY && Y <= CoordY + SizeY))
+        {
+            return true;
+        }
+        return false;
+    }
 
+// истина - если координаты находятся внутри фигуры
+public bool IsAreaShape(int X, int Y)
+{
+    if ((X >= CoordX && X <= CoordX + SizeX) && (Y >= CoordY && Y <= CoordY + SizeY))
+    {
+        return true;
+    }
+    return false;
+}
